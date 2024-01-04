@@ -1,0 +1,1494 @@
+{
+	"info": {
+		"_postman_id": "77728b01-34c8-487b-a1e7-fae1b614ac65",
+		"name": "E-Wallet Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32010893"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_name",
+									"value": "Andre",
+									"type": "text"
+								},
+								{
+									"key": "user_phone",
+									"value": "0895359517463",
+									"type": "text"
+								},
+								{
+									"key": "user_email",
+									"value": "andre@test.com",
+									"type": "text"
+								},
+								{
+									"key": "user_password",
+									"value": "test123",
+									"type": "text"
+								},
+								{
+									"key": "user_picture",
+									"type": "file",
+									"src": "/C:/Users/USER/Documents/DIA BATCH 4/backend developer/dia4-ewallet-master/upload/BAGUS ANDRE NATHANAEL FULL.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_name",
+											"value": "Andre",
+											"type": "text"
+										},
+										{
+											"key": "user_phone",
+											"value": "0895359517463",
+											"type": "text"
+										},
+										{
+											"key": "user_email",
+											"value": "andre@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "user_password",
+											"value": "pass123",
+											"type": "text"
+										},
+										{
+											"key": "user_picture",
+											"type": "file",
+											"src": "/C:/Users/USER/Documents/DIA BATCH 4/backend developer/dia4-ewallet-master/upload/BAGUS ANDRE NATHANAEL FULL.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4050/api/v1/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Register success\",\n    \"error_code\": \"\",\n    \"data\": {\n        \"userId\": 1,\n        \"userName\": \"Andre\",\n        \"userPhone\": \"0895359517463\",\n        \"userEmail\": \"andre@test.com\",\n        \"userPicture\": \"img.png\",\n        \"balance\": 0\n    }\n}"
+						},
+						{
+							"name": "Register Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_name",
+											"value": "Robby",
+											"type": "text"
+										},
+										{
+											"key": "user_phone",
+											"value": "089658079609",
+											"type": "text"
+										},
+										{
+											"key": "user_email",
+											"value": "robby@test.com",
+											"type": "text"
+										},
+										{
+											"key": "user_password",
+											"value": "test123",
+											"type": "text"
+										},
+										{
+											"key": "user_picture",
+											"type": "file",
+											"src": "/Users/irvanhawari/Downloads/img.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4050/api/v1/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Register failed\",\n    \"error_code\": \"400\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone_number",
+									"value": "0895359517463",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone_number",
+											"value": "089658079609",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4050/api/v1/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Login success\",\n    \"error_code\": \"\",\n    \"data\": {\n        \"userId\": 1,\n        \"userName\": \"Robby\",\n        \"userPhone\": \"082072829292\",\n        \"userEmail\": \"test@test.com\",\n        \"userPicture\": \"profile.png\",\n        \"balance\": 0\n    }\n}"
+						},
+						{
+							"name": "Login Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone_number",
+											"value": "089658079609",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4050/api/v1/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Login failed\",\n    \"error_code\": \"401\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Set Profile Picture",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "user_picture",
+									"type": "file",
+									"src": "/C:/Users/USER/Documents/DIA BATCH 4/backend developer/upload/BAGUS ANDRE NATHANAEL FULL.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/set-photo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"set-photo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Set Profile Picture Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "user_picture",
+											"type": "file",
+											"src": "/Users/irvanhawari/Downloads/img.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4050/api/v1/user/edit/photo",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"edit",
+										"photo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully changed user picture\",\n    \"error_code\": \"\",\n    \"data\": {\n        \"userId\": 1,\n        \"userPicture\": \"http://localhost:4050/uploads/profile.png\"\n    }\n}"
+						},
+						{
+							"name": "Set Profile Picture Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "user_picture",
+											"type": "file",
+											"src": "/Users/irvanhawari/Downloads/img.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4050/api/v1/user/edit/photo",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"edit",
+										"photo"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Failed to change user picture\",\n    \"error_code\": \"400\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Change Email",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "user_email",
+									"value": "edit@test.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4050/api/v1/user/edit/email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4050",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"edit",
+								"email"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Change Email Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "user_email",
+											"value": "edit@test.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4050/api/v1/user/edit/email",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"edit",
+										"email"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully changed user email\",\n    \"error_code\": \"\",\n    \"data\": {\n        \"userId\": 1,\n        \"userEmail\": \"edit@test.com\"\n    }\n}"
+						},
+						{
+							"name": "Change Email Failed",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "user_email",
+											"value": "edit@test.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4050/api/v1/user/edit/email",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"edit",
+										"email"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Failed to change user email\",\n    \"error_code\": \"400\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Change Username",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "user_name",
+									"value": "Robby Ari",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4050/api/v1/user/edit/username",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4050",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"edit",
+								"username"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Change Username Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "user_name",
+											"value": "Robby Ari",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4050/api/v1/user/edit/username",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"edit",
+										"username"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully changed user name\",\n    \"error_code\": \"\",\n    \"data\": {\n        \"userId\": 1,\n        \"userName\": \"Robby Ari\"\n    }\n}"
+						},
+						{
+							"name": "Change Username Failed",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "user_name",
+											"value": "Robby Ari",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4050/api/v1/user/edit/username",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"edit",
+										"username"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Failed to change user name\",\n    \"error_code\": \"400\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Show Balance",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4050/api/v1/user/balance",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4050",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"balance"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show Balance Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4050/api/v1/user/balance",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"balance"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully displayed balance\",\n    \"error_code\": \"\",\n    \"data\": {\n        \"userId\": 1,\n        \"balance\": \"1000000\"\n    }\n}"
+						},
+						{
+							"name": "Show Balance Failed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4050/api/v1/user/balance",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"balance"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Failed to display balance\",\n    \"error_code\": \"400\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Show History Transaction",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4050/api/v1/user/history-transaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4050",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"history-transaction"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show History Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4050/api/v1/user/history-transaction",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"history-transaction"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully displayed history transaction\",\n    \"error_code\": \"\",\n    \"data\": [\n        {\n            \"transactionId\": 3,\n            \"transactionAmount\": 300000,\n            \"transactionSender\": 1,\n            \"transactionReceiver\": 2,\n            \"transactionStatus\": \"success\",\n            \"transactionType\": \"transfer\",\n            \"transactionTime\": \"2024-01-01T20:00:00\"\n        },\n        {\n            \"transactionId\": 5,\n            \"transactionAmount\": 500000,\n            \"transactionSender\": 1,\n            \"transactionReceiver\": 2,\n            \"transactionStatus\": \"success\",\n            \"transactionType\": \"transfer\",\n            \"transactionTime\": \"2024-01-01T20:00:00\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Show History Failed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4050/api/v1/user/history-transaction",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"history-transaction"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Failed to display history transaction\",\n    \"error_code\": \"400\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Top Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "topup",
+									"value": "500000",
+									"type": "text"
+								},
+								{
+									"key": "transaction_type",
+									"value": "topup",
+									"type": "text"
+								},
+								{
+									"key": "transaction_time",
+									"value": "2024-01-01T20:00:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4050/api/v1/transaction/topup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4050",
+							"path": [
+								"api",
+								"v1",
+								"transaction",
+								"topup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Top Up Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4050/api/v1/transaction/topup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"transaction",
+										"topup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully topup balance\",\n    \"error_code\": \"\",\n    \"data\": {\n        \"transactionId\": 1,\n        \"transactionAmount\": 500000,\n        \"transactionStatus\": \"success\",\n        \"transactionType\": \"topup\",\n        \"transactionTime\": \"2024-01-01T20:00:00\"\n    }\n}"
+						},
+						{
+							"name": "Top Up Failed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4050/api/v1/transaction/topup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"transaction",
+										"topup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Failed topup balance\",\n    \"error_code\": \"400\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Transfer Money",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "transaction_amount",
+									"value": "300000",
+									"type": "text"
+								},
+								{
+									"key": "transaction_time",
+									"value": "2024-01-01T20:00:00",
+									"type": "text"
+								},
+								{
+									"key": "transaction_sender",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "transaction_receiver",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "transaction_type",
+									"value": "transfer",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4050/api/v1/transaction/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4050",
+							"path": [
+								"api",
+								"v1",
+								"transaction",
+								"transfer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Transfer Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "transaction_amount",
+											"value": "300000",
+											"type": "text"
+										},
+										{
+											"key": "transaction_time",
+											"value": "2024-01-01T20:00:00",
+											"type": "text"
+										},
+										{
+											"key": "transaction_sender",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "transaction_receiver",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "transaction_type",
+											"value": "transfer",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4050/api/v1/transaction/transfer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"transaction",
+										"transfer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully transfer balance\",\n    \"error_code\": \"\",\n    \"data\": {\n        \"transactionId\": 10,\n        \"transactionAmount\": 300000,\n        \"transactionSender\": 1,\n        \"transactionReceiver\": 2,\n        \"transactionStatus\": \"success\",\n        \"transactionType\": \"transfer\",\n        \"transactionTime\": \"2024-01-01T20:00:00\"\n    }\n}"
+						},
+						{
+							"name": "Transfer Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "transaction_amount",
+											"value": "300000",
+											"type": "text"
+										},
+										{
+											"key": "transaction_time",
+											"value": "2024-01-01T20:00:00",
+											"type": "text"
+										},
+										{
+											"key": "transaction_sender",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "transaction_receiver",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "transaction_type",
+											"value": "transfer",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4050/api/v1/transaction/transfer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"transaction",
+										"transfer"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Failed transfer balance\",\n    \"error_code\": \"400\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Request Money",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "transaction_amount",
+									"value": "300000",
+									"type": "text"
+								},
+								{
+									"key": "transaction_time",
+									"value": "2024-01-01T20:00:00",
+									"type": "text"
+								},
+								{
+									"key": "transaction_sender",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "transaction_receiver",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "transaction_type",
+									"value": "request",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4050/api/v1/transaction/request",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4050",
+							"path": [
+								"api",
+								"v1",
+								"transaction",
+								"request"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Request Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "transaction_amount",
+											"value": "300000",
+											"type": "text"
+										},
+										{
+											"key": "transaction_time",
+											"value": "2024-01-01T20:00:00",
+											"type": "text"
+										},
+										{
+											"key": "transaction_sender",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "transaction_receiver",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "transaction_type",
+											"value": "request",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4050/api/v1/transaction/transfer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"transaction",
+										"transfer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Successfully request balance\",\n    \"error_code\": \"\",\n    \"data\": {\n        \"transactionId\": 10,\n        \"transactionAmount\": 300000,\n        \"transactionSender\": 1,\n        \"transactionReceiver\": 2,\n        \"transactionStatus\": \"pending\",\n        \"transactionType\": \"request\",\n        \"transactionTime\": \"2024-01-01T20:00:00\"\n    }\n}"
+						},
+						{
+							"name": "Request Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "transaction_amount",
+											"value": "300000",
+											"type": "text"
+										},
+										{
+											"key": "transaction_time",
+											"value": "2024-01-01T20:00:00",
+											"type": "text"
+										},
+										{
+											"key": "transaction_sender",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "transaction_receiver",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "transaction_type",
+											"value": "request",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4050/api/v1/transaction/transfer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4050",
+									"path": [
+										"api",
+										"v1",
+										"transaction",
+										"transfer"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Failed request balance\",\n    \"error_code\": \"400\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:4050"
+		}
+	]
+}
