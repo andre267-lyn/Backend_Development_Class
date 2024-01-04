@@ -1,6 +1,4 @@
-package com.ideaco.andre.service;// JobService.java
-
-// imports (sesuaikan jika ada)
+package com.ideaco.andre.service;
 
 import com.ideaco.andre.dto.JobDTO;
 import com.ideaco.andre.model.JobModel;
